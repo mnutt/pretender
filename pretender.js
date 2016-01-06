@@ -50,7 +50,9 @@ function Registry(/* host */) {
     DELETE: new RouteRecognizer(),
     PATCH: new RouteRecognizer(),
     HEAD: new RouteRecognizer(),
-    OPTIONS: new RouteRecognizer()
+    OPTIONS: new RouteRecognizer(),
+    PROPFIND: new RouteRecognizer(),
+    MKCOL: new RouteRecognizer()
   };
 }
 
@@ -265,6 +267,8 @@ Pretender.prototype = {
   'delete': verbify('DELETE'),
   patch: verbify('PATCH'),
   head: verbify('HEAD'),
+  propfind: verbify('PROPFIND'),
+  mkcol: verbify('MKCOL'),
   map: function(maps) {
     maps.call(this);
   },
